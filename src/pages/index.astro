@@ -1,0 +1,19 @@
+---
+import PresentationLayout from '../layouts/PresentationLayout.astro';
+import Navigation from '../components/Navigation.svelte';
+import Slide01Hero from '../components/slides/Slide01Hero.astro';
+import Slide02Technical from '../components/slides/Slide02Technical.svelte';
+import Slide03Ethics from '../components/slides/Slide03Ethics.astro';
+import Slide04Social from '../components/slides/Slide04Social.svelte';
+import Slide05CTA from '../components/slides/Slide05CTA.astro';
+---
+
+<PresentationLayout title="Los Riesgos de la IA - Presentación Web">
+  <Navigation client:load>
+    <Slide01Hero />
+    <Slide02Technical client:load />
+    <Slide03Ethics />
+    <Slide04Social client:load />
+    <Slide05CTA />
+  </Navigation>
+</PresentationLayout>

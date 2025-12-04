@@ -1,0 +1,247 @@
+---
+import { Eye, Scale } from 'lucide-svelte';
+---
+
+<div class="slide slide-ethics swiper-slide">
+  <div class="slide-background"></div>
+
+  <div class="slide-content">
+    <div class="slide-header">
+      <h2>Riesgos Éticos</h2>
+      <p class="subtitle">Dilemas morales en la era digital</p>
+    </div>
+
+    <div class="ethics-container">
+      <div class="ethics-visual">
+        <div class="ethics-icon">
+          <Eye size={80} />
+        </div>
+        <p class="ethics-label">Vigilancia y Privacidad</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3>Recopilación de datos</h3>
+            <p>Sistemas de IA recopilan información personal masivamente</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3>Perfilado discriminatorio</h3>
+            <p>Creación de perfiles que pueden ser discriminatorios</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h3>Falta de consentimiento</h3>
+            <p>Los usuarios muchas veces desconocen cómo se usan sus datos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      <p class="quote-text">"La privacidad no es un derecho que se negocia, es un derecho fundamental humano."</p>
+      <p class="quote-author">— UNESCO</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--color-base-dark);
+    padding: var(--spacing-2xl);
+  }
+
+  .slide-background {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 100% 0%, rgba(96, 165, 250, 0.1) 0%, transparent 60%);
+    z-index: 1;
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .slide-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .slide-header h2 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-accent-bright);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(250, 249, 246, 0.7);
+  }
+
+  .ethics-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .ethics-visual {
+    text-align: center;
+    animation: slideLeft 0.6s ease-out;
+  }
+
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .ethics-icon {
+    color: var(--color-electric);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+  }
+
+  .ethics-label {
+    font-size: 1.1rem;
+    color: rgba(250, 249, 246, 0.85);
+    font-weight: 600;
+  }
+
+  .timeline {
+    animation: slideRight 0.6s ease-out;
+  }
+
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 2px;
+    height: calc(100% - 20px);
+    background: linear-gradient(180deg, var(--color-electric), transparent);
+  }
+
+  .timeline-item:last-child::before {
+    display: none;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -8px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-electric);
+    border: 3px solid var(--color-base-dark);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+    color: var(--color-accent-bright);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+    color: rgba(250, 249, 246, 0.75);
+  }
+
+  .quote-box {
+    background: rgba(30, 58, 138, 0.3);
+    border-left: 4px solid var(--color-electric);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    animation: fadeUp 0.8s ease-out 0.3s both;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .quote-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-neutral-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+  }
+
+  .quote-author {
+    font-size: 0.95rem;
+    color: var(--color-electric);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .slide {
+      padding: var(--spacing-xl);
+    }
+
+    .ethics-container {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .timeline {
+      margin-top: var(--spacing-xl);
+    }
+  }
+</style>

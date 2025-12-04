@@ -1,0 +1,77 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  class?: string;
+}
+
+const { variant = 'primary', class: className = '' } = Astro.props;
+---
+
+<button class={`btn btn-${variant} ${className}`}>
+  <slot />
+</button>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .btn:hover::before {
+    opacity: 1;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
+    color: var(--color-base-dark);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+    transform: scale(1.03);
+  }
+
+  .btn-secondary {
+    background: rgba(96, 165, 250, 0.1);
+    border: 2px solid var(--color-electric);
+    color: var(--color-neutral-light);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(96, 165, 250, 0.2);
+    border-color: var(--color-accent-bright);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid var(--color-neutral-light);
+    color: var(--color-neutral-light);
+  }
+
+  .btn-ghost:hover {
+    background: rgba(250, 249, 246, 0.1);
+    border-color: var(--color-electric);
+    color: var(--color-electric);
+  }
+</style>
