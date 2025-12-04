@@ -1,13 +1,11 @@
 <script>
   import { onMount } from 'svelte';
-  import Swiper from 'swiper';
-  import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
   import { ChevronLeft, ChevronRight } from 'lucide-svelte';
   import { animateSlideEntrance, fadeTransition, addButtonHoverAnimation } from '../utils/animations';
 
-  let swiper = null;
   let currentSlide = 0;
   let totalSlides = 5;
+  let slides = [];
 
   const slideNames = [
     'riesgo-1-portada',
@@ -18,65 +16,26 @@
   ];
 
   onMount(() => {
-    // Initialize Swiper
-    swiper = new Swiper('.swiper', {
-      modules: [Navigation, Pagination, Keyboard, Mousewheel],
-      slidesPerView: 1,
-      spaceBetween: 0,
-      speed: 700,
-      keyboard: {
-        enabled: true,
-        onlyInViewport: false,
-      },
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true,
-        dynamicBullets: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      on: {
-        slideChange: (swiper) => {
-          currentSlide = swiper.activeIndex;
-          updateHash(slideNames[swiper.activeIndex]);
+    // Get all slides
+    slides = Array.from(document.querySelectorAll('.swiper-slide'));
 
-          // Animate the newly active slide
-          const activeSlide = swiper.slides[swiper.activeIndex];
-          if (activeSlide) {
-            fadeTransition(activeSlide, 0.6);
-            animateSlideEntrance(activeSlide);
-          }
-        },
-      },
-      hashNavigation: {
-        watchState: true,
-        replaceState: true,
-      },
-    });
+    // Add swiper-slide-active class to first slide
+    if (slides.length > 0) {
+      slides[0].classList.add('swiper-slide-active');
+      animateSlideEntrance(slides[0]);
+    }
 
     // Add hover animations to buttons
-    document.querySelectorAll('.btn').forEach((btn) => {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((btn) => {
       addButtonHoverAnimation(btn);
     });
 
     // Handle hash navigation on load
     const hash = window.location.hash.slice(1);
     const slideIndex = slideNames.indexOf(hash);
-    if (slideIndex !== -1) {
-      swiper.slideTo(slideIndex);
-    } else {
-      // Animate the initial slide
-      const activeSlide = swiper?.slides[0];
-      if (activeSlide) {
-        animateSlideEntrance(activeSlide);
-      }
+    if (slideIndex !== -1 && slideIndex !== currentSlide) {
+      goToSlide(slideIndex);
     }
 
     // Listen for hash changes
@@ -84,7 +43,16 @@
       const hash = window.location.hash.slice(1);
       const slideIndex = slideNames.indexOf(hash);
       if (slideIndex !== -1 && slideIndex !== currentSlide) {
-        swiper.slideTo(slideIndex);
+        goToSlide(slideIndex);
+      }
+    });
+
+    // Listen for keyboard events
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
       }
     });
   });
@@ -94,21 +62,28 @@
   }
 
   function goToSlide(index) {
-    if (swiper) {
-      swiper.slideTo(index);
-    }
+    if (index < 0 || index >= slides.length || index === currentSlide) return;
+
+    // Remove active class from current slide
+    slides[currentSlide]?.classList.remove('swiper-slide-active');
+    fadeTransition(slides[currentSlide], 0.3);
+
+    // Add active class to new slide
+    currentSlide = index;
+    slides[currentSlide]?.classList.add('swiper-slide-active');
+    fadeTransition(slides[currentSlide], 0.6);
+    animateSlideEntrance(slides[currentSlide]);
+
+    // Update hash
+    updateHash(slideNames[currentSlide]);
   }
 
   function nextSlide() {
-    if (swiper) {
-      swiper.slideNext();
-    }
+    goToSlide(currentSlide + 1);
   }
 
   function prevSlide() {
-    if (swiper) {
-      swiper.slidePrev();
-    }
+    goToSlide(currentSlide - 1);
   }
 </script>
 
@@ -169,6 +144,16 @@
     align-items: center;
     justify-content: center;
     scroll-behavior: smooth;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease-out;
+  }
+
+  :global(.swiper-slide-active) {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
   }
 
   /* Navigation Buttons */
