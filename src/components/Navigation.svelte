@@ -3,6 +3,7 @@
   import Swiper from 'swiper';
   import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
   import { ChevronLeft, ChevronRight } from 'lucide-svelte';
+  import { animateSlideEntrance, fadeTransition, addButtonHoverAnimation } from '../utils/animations';
 
   let swiper = null;
   let currentSlide = 0;
@@ -45,6 +46,13 @@
         slideChange: (swiper) => {
           currentSlide = swiper.activeIndex;
           updateHash(slideNames[swiper.activeIndex]);
+
+          // Animate the newly active slide
+          const activeSlide = swiper.slides[swiper.activeIndex];
+          if (activeSlide) {
+            fadeTransition(activeSlide, 0.6);
+            animateSlideEntrance(activeSlide);
+          }
         },
       },
       hashNavigation: {
@@ -53,11 +61,22 @@
       },
     });
 
+    // Add hover animations to buttons
+    document.querySelectorAll('.btn').forEach((btn) => {
+      addButtonHoverAnimation(btn);
+    });
+
     // Handle hash navigation on load
     const hash = window.location.hash.slice(1);
     const slideIndex = slideNames.indexOf(hash);
     if (slideIndex !== -1) {
       swiper.slideTo(slideIndex);
+    } else {
+      // Animate the initial slide
+      const activeSlide = swiper?.slides[0];
+      if (activeSlide) {
+        animateSlideEntrance(activeSlide);
+      }
     }
 
     // Listen for hash changes
