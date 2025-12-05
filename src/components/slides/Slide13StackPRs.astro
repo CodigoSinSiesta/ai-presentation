@@ -1,0 +1,289 @@
+---
+---
+
+<div class="slide slide-stack-prs swiper-slide">
+  <div class="slide-background"></div>
+
+  <div class="slide-content">
+    <div class="slide-header">
+      <h2 class="title">Stack PRs</h2>
+      <p class="subtitle">Divide una feature grande en PRs pequeñas secuenciales</p>
+    </div>
+
+    <div class="stack-content">
+      <div class="traditional-vs-stack">
+        <div class="approach traditional card-glass">
+          <h3>❌ Enfoque Tradicional</h3>
+          <div class="pr-box large">
+            <div class="pr-title">PR: Nueva feature completa</div>
+            <div class="pr-stats">1500 LOC | 45 archivos | 8 reviewers | 2 semanas</div>
+          </div>
+          <div class="problems">
+            <span>Revisión superficial</span>
+            <span>Muchos conflicts</span>
+            <span>Feedback tardío</span>
+          </div>
+        </div>
+
+        <div class="approach stack card-glass">
+          <h3>✅ Stack PRs</h3>
+          <div class="stacked-prs">
+            <div class="pr-box small">
+              <div class="pr-title">PR1: Database schema</div>
+              <div class="pr-stats">180 LOC | 3 archivos | Review en 1h</div>
+            </div>
+            <div class="arrow-down">↓</div>
+            <div class="pr-box small">
+              <div class="pr-title">PR2: Backend API</div>
+              <div class="pr-stats">220 LOC | 5 archivos | Review en 1.5h</div>
+            </div>
+            <div class="arrow-down">↓</div>
+            <div class="pr-box small">
+              <div class="pr-title">PR3: Frontend UI</div>
+              <div class="pr-stats">200 LOC | 4 archivos | Review en 1h</div>
+            </div>
+          </div>
+          <div class="benefits">
+            <span>Revisión profunda</span>
+            <span>Feedback temprano</span>
+            <span>Menos conflicts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-to-section card-glass">
+        <h3>🛠️ Cómo Implementar Stack PRs</h3>
+        <div class="methods">
+          <div class="method">
+            <h4>Opción 1: GitHub Native (2024)</h4>
+            <div class="steps">
+              <code>git checkout main</code>
+              <code>git checkout -b feature/step1</code>
+              <code># Commits de step1</code>
+              <code>git checkout -b feature/step2</code>
+              <code># Crear PRs con base en rama anterior</code>
+            </div>
+          </div>
+
+          <div class="method">
+            <h4>Opción 2: Feature Flags</h4>
+            <div class="steps">
+              <code>if (featureFlags.newAuth) {</code>
+              <code>&nbsp;&nbsp;// Código nuevo (mergeado pero inactivo)</code>
+              <code>} else {</code>
+              <code>&nbsp;&nbsp;// Código viejo</code>
+              <code>}</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="golden-rule card-glass">
+        <p><strong>Regla:</strong> Si un PR necesita más de 2 horas de review, debe dividirse en stack PRs</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slide-stack-prs {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slide-background {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 40% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 60% 70%, rgba(34, 197, 94, 0.08) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    padding: var(--spacing-3xl);
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  .slide-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--color-electric);
+    font-weight: 500;
+  }
+
+  .traditional-vs-stack {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .approach {
+    padding: var(--spacing-2xl);
+  }
+
+  .approach h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .pr-box {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pr-box.large {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid #ef4444;
+  }
+
+  .pr-box.small {
+    background: rgba(34, 197, 94, 0.1);
+    border-left: 4px solid #22c55e;
+  }
+
+  .pr-title {
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .pr-stats {
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    opacity: 0.75;
+  }
+
+  .arrow-down {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--color-electric);
+    margin: var(--spacing-sm) 0;
+  }
+
+  .problems, .benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+  }
+
+  .problems span {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(239, 68, 68, 0.15);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: #f87171;
+  }
+
+  .benefits span {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(34, 197, 94, 0.15);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    color: #4ade80;
+  }
+
+  .how-to-section {
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .how-to-section h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .method h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-electric);
+  }
+
+  .steps {
+    background: rgba(10, 22, 40, 0.6);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border-left: 2px solid var(--color-electric);
+  }
+
+  .steps code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) 0;
+    color: var(--color-electric);
+  }
+
+  .golden-rule {
+    padding: var(--spacing-xl);
+    text-align: center;
+    border: 2px solid var(--color-electric);
+    background: rgba(59, 130, 246, 0.05);
+  }
+
+  .golden-rule p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .golden-rule strong {
+    color: var(--color-electric);
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .traditional-vs-stack, .methods {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .approach {
+      padding: var(--spacing-xl);
+    }
+  }
+</style>

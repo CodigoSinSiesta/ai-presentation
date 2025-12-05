@@ -1,0 +1,272 @@
+---
+---
+
+<div class="slide slide-closing-metrics swiper-slide">
+  <div class="slide-background"></div>
+
+  <div class="slide-content">
+    <div class="slide-header">
+      <h2 class="title">Métricas de Éxito</h2>
+      <p class="subtitle">Indicadores clave de adopción responsable</p>
+    </div>
+
+    <div class="closing-content">
+      <div class="key-metrics card-glass">
+        <div class="metrics-grid">
+          <div class="metric">
+            <span class="metric-icon">📉</span>
+            <div>
+              <p><strong>Churn:</strong> Reducir a &lt;15%</p>
+            </div>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">📏</span>
+            <div>
+              <p><strong>PR Size:</strong> 200-400 LOC</p>
+            </div>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">⏱️</span>
+            <div>
+              <p><strong>Review Time:</strong> &lt;1h</p>
+            </div>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">🐛</span>
+            <div>
+              <p><strong>Bugs:</strong> ≤ pre-IA</p>
+            </div>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">🛡️</span>
+            <div>
+              <p><strong>Security:</strong> 0 críticas</p>
+            </div>
+          </div>
+          <div class="metric">
+            <span class="metric-icon">✅</span>
+            <div>
+              <p><strong>Coverage:</strong> &gt;80%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="final-message card-glass">
+        <p class="quote">"La IA es una herramienta poderosa, pero no mágica. El éxito viene de combinar velocidad de IA con rigor de ingeniería."</p>
+        <div class="framework-reminder">
+          <p><strong>Los 4R:</strong></p>
+          <div class="rs">
+            <span class="r">Risk</span>
+            <span class="r">Readability</span>
+            <span class="r">Reliability</span>
+            <span class="r">Resilience</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p class="cta-text">Alejandro Berrocal</p>
+        <p class="cta-subtitle">¿Preguntas?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slide-closing-metrics {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slide-background {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
+      radial-gradient(circle at 30% 70%, rgba(34, 197, 94, 0.08) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    padding: var(--spacing-3xl);
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  .slide-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--color-electric);
+    font-weight: 500;
+  }
+
+  .closing-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .key-metrics {
+    padding: var(--spacing-lg);
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .metric {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(10, 22, 40, 0.4);
+    border-radius: var(--radius-md);
+  }
+
+  .metric-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .metric p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  .metric strong {
+    color: var(--color-electric);
+  }
+
+  .final-message {
+    padding: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .quote {
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-electric);
+  }
+
+  .framework-reminder {
+    padding: var(--spacing-md);
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-electric);
+  }
+
+  .framework-reminder p {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .rs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .r {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-electric), var(--color-accent-bright));
+    color: var(--color-base-dark);
+    font-weight: 900;
+    font-family: var(--font-display);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+  }
+
+  .cta {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+  }
+
+  .cta-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-electric);
+    margin-bottom: var(--spacing-sm);
+    margin: 0 0 var(--spacing-sm) 0;
+  }
+
+  .cta-subtitle {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .key-metrics, .final-message, .cta {
+      padding: var(--spacing-lg);
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    .quote {
+      font-size: 1rem;
+    }
+
+    .r {
+      font-size: 0.85rem;
+      padding: var(--spacing-xs) var(--spacing-md);
+    }
+  }
+</style>

@@ -1,0 +1,365 @@
+---
+---
+
+<div class="slide slide-framework swiper-slide">
+  <div class="slide-background"></div>
+
+  <div class="slide-content">
+    <div class="slide-header">
+      <h2 class="title">Framework 4R</h2>
+      <p class="subtitle">Un enfoque sistemático para código asistido por IA</p>
+    </div>
+
+    <div class="framework-content">
+      <div class="framework-grid">
+        <div class="r-card card-glass r-risk">
+          <div class="r-number">1</div>
+          <div class="r-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="M12 8v4"></path>
+              <path d="M12 16h.01"></path>
+            </svg>
+          </div>
+          <h3>Riesgo</h3>
+          <p>Seguridad, escalado de privilegios, validación de inputs</p>
+          <div class="r-tools">
+            <span class="tool-badge">SonarQube</span>
+            <span class="tool-badge">Pre-commit</span>
+          </div>
+        </div>
+
+        <div class="r-card card-glass r-readability">
+          <div class="r-number">2</div>
+          <div class="r-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3>Legibilidad</h3>
+          <p>Nombres claros, complejidad &lt;10, documentación del "por qué"</p>
+          <div class="r-tools">
+            <span class="tool-badge">Linters</span>
+            <span class="tool-badge">Prettier</span>
+          </div>
+        </div>
+
+        <div class="r-card card-glass r-reliability">
+          <div class="r-number">3</div>
+          <div class="r-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h3>Confiabilidad</h3>
+          <p>TDD con IA, generar tests y hacerlos pasar, iterar edge cases</p>
+          <div class="r-tools">
+            <span class="tool-badge">Jest</span>
+            <span class="tool-badge">Pytest</span>
+          </div>
+        </div>
+
+        <div class="r-card card-glass r-resilience">
+          <div class="r-number">4</div>
+          <div class="r-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20"></path>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3>Resiliencia</h3>
+          <p>Graceful degradation, retry/backoff, observabilidad</p>
+          <div class="r-tools">
+            <span class="tool-badge">Sentry</span>
+            <span class="tool-badge">DataDog</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="framework-flow card-glass">
+        <h3>Flujo de Aplicación</h3>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-number">1</div>
+            <p>AI genera código</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="step-number">2</div>
+            <p>Validar con 4R</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="step-number">3</div>
+            <p>Refinar iterativamente</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="step-number">4</div>
+            <p>Commit confiable</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="key-message">
+        <p>
+          <strong>Cada R es una pregunta que debes hacer antes de aceptar código generado por IA</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slide-framework {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slide-background {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+    z-index: 1;
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    padding: var(--spacing-3xl);
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  .slide-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .title {
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 900;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--color-electric);
+    font-weight: 500;
+  }
+
+  .framework-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .r-card {
+    padding: var(--spacing-2xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .r-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent-bright), var(--color-electric));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .r-card:hover {
+    transform: translateY(-10px) scale(1.03);
+  }
+
+  .r-card:hover::before {
+    opacity: 1;
+  }
+
+  .r-number {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
+    color: var(--color-base-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 900;
+    font-family: var(--font-display);
+  }
+
+  .r-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-electric);
+  }
+
+  .r-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-electric);
+  }
+
+  .r-card p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .r-tools {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tool-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: var(--color-electric);
+  }
+
+  .framework-flow {
+    padding: var(--spacing-2xl);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .framework-flow h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .flow-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+  }
+
+  .flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.2);
+    border: 2px solid var(--color-electric);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-electric);
+  }
+
+  .flow-step p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  .flow-arrow {
+    font-size: 2rem;
+    color: var(--color-electric);
+    opacity: 0.6;
+  }
+
+  .key-message {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    border-top: 2px solid rgba(96, 165, 250, 0.2);
+  }
+
+  .key-message p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .key-message strong {
+    color: var(--color-electric);
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .framework-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .framework-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+
+    .flow-steps {
+      flex-direction: column;
+    }
+
+    .flow-arrow {
+      transform: rotate(90deg);
+    }
+
+    .key-message p {
+      font-size: 1.05rem;
+    }
+  }
+</style>

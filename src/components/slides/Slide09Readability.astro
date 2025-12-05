@@ -1,0 +1,359 @@
+---
+---
+
+<div class="slide slide-readability swiper-slide">
+  <div class="slide-background"></div>
+
+  <div class="slide-content">
+    <div class="slide-header">
+      <div class="r-badge">R2</div>
+      <h2 class="title">Legibilidad</h2>
+      <p class="subtitle">Código que otros pueden entender en 6 meses</p>
+    </div>
+
+    <div class="readability-content">
+      <div class="principles-grid">
+        <div class="principle-card card-glass">
+          <h3>📝 Nombres Claros</h3>
+          <div class="example-box bad">
+            <code>const d = new Date();</code>
+            <code>function calc(x, y) {'{...}'}</code>
+          </div>
+          <div class="arrow">↓</div>
+          <div class="example-box good">
+            <code>const currentTimestamp = new Date();</code>
+            <code>function calculateDiscount(price, rate) {'{...}'}</code>
+          </div>
+        </div>
+
+        <div class="principle-card card-glass">
+          <h3>🔢 Complejidad &lt; 10</h3>
+          <p class="metric-desc">Complejidad ciclomática máxima recomendada</p>
+          <div class="complexity-visual">
+            <div class="complexity-bar acceptable">
+              <span>1-5: Simple</span>
+            </div>
+            <div class="complexity-bar warning">
+              <span>6-10: Aceptable</span>
+            </div>
+            <div class="complexity-bar danger">
+              <span>11+: Refactor!</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="principle-card card-glass">
+          <h3>💬 Documenta el "Por Qué"</h3>
+          <div class="example-box bad">
+            <code>// Incrementa contador</code>
+            <code>counter++;</code>
+          </div>
+          <div class="arrow">↓</div>
+          <div class="example-box good">
+            <code>// Necesario para evitar race condition</code>
+            <code>// en múltiples workers concurrentes</code>
+            <code>counter++;</code>
+          </div>
+        </div>
+
+        <div class="principle-card card-glass">
+          <h3>🎯 Funciones Pequeñas</h3>
+          <ul class="guidelines">
+            <li>Una responsabilidad por función</li>
+            <li>Máximo 20-30 líneas</li>
+            <li>Sin niveles de indentación &gt; 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tools-section card-glass">
+        <h3>🛠️ Herramientas de Legibilidad</h3>
+        <div class="tools-row">
+          <div class="tool">
+            <span class="tool-name">ESLint / Pylint</span>
+            <span class="tool-desc">Reglas de estilo</span>
+          </div>
+          <div class="tool">
+            <span class="tool-name">Prettier / Black</span>
+            <span class="tool-desc">Formato automático</span>
+          </div>
+          <div class="tool">
+            <span class="tool-name">SonarQube</span>
+            <span class="tool-desc">Complejidad + code smells</span>
+          </div>
+          <div class="tool">
+            <span class="tool-name">CodeClimate</span>
+            <span class="tool-desc">Mantenibilidad score</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="golden-rule card-glass">
+        <p>
+          <strong>Regla de Oro:</strong> Si necesitas más de 30 segundos para entender
+          qué hace una función, necesita refactoring
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .slide-readability {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slide-background {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 40% 30%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 60% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    padding: var(--spacing-3xl);
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  .slide-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .r-badge {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: var(--color-base-dark);
+    font-weight: 900;
+    font-family: var(--font-display);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    color: #22c55e;
+  }
+
+  .subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: #4ade80;
+    font-weight: 500;
+  }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .principle-card {
+    padding: var(--spacing-2xl);
+    transition: all var(--transition-base);
+    border-left: 4px solid #22c55e;
+  }
+
+  .principle-card:hover {
+    transform: translateY(-6px);
+    border-left-color: #4ade80;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-neutral-light);
+  }
+
+  .example-box {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin: var(--spacing-sm) 0;
+  }
+
+  .example-box code {
+    display: block;
+    padding: var(--spacing-xs) 0;
+  }
+
+  .example-box.bad {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 3px solid #ef4444;
+  }
+
+  .example-box.good {
+    background: rgba(34, 197, 94, 0.1);
+    border-left: 3px solid #22c55e;
+  }
+
+  .arrow {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--color-electric);
+    margin: var(--spacing-sm) 0;
+  }
+
+  .metric-desc {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .complexity-visual {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .complexity-bar {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .complexity-bar.acceptable {
+    background: rgba(34, 197, 94, 0.2);
+    border-left: 4px solid #22c55e;
+  }
+
+  .complexity-bar.warning {
+    background: rgba(251, 146, 60, 0.2);
+    border-left: 4px solid #fb923c;
+  }
+
+  .complexity-bar.danger {
+    background: rgba(239, 68, 68, 0.2);
+    border-left: 4px solid #ef4444;
+  }
+
+  .guidelines {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .guidelines li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  .guidelines li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: 900;
+  }
+
+  .tools-section {
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .tools-section h3 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .tools-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .tool {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: rgba(34, 197, 94, 0.05);
+    border-radius: var(--radius-md);
+  }
+
+  .tool-name {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1rem;
+    color: #22c55e;
+  }
+
+  .tool-desc {
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+
+  .golden-rule {
+    padding: var(--spacing-xl);
+    text-align: center;
+    border: 2px solid #22c55e;
+    background: rgba(34, 197, 94, 0.05);
+  }
+
+  .golden-rule p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .golden-rule strong {
+    color: #22c55e;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .principles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tools-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .principle-card {
+      padding: var(--spacing-xl);
+    }
+
+    .tools-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

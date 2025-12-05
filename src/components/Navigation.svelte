@@ -5,15 +5,31 @@
   import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
 
   let currentSlide = 0;
-  let totalSlides = 5;
+  let totalSlides = 21;
   let slides = [];
 
   const slideNames = [
-    'riesgo-1-portada',
-    'riesgo-2-tecnico',
-    'riesgo-3-etico',
-    'riesgo-4-social',
-    'riesgo-5-cta'
+    'hero',
+    'paradox',
+    'metrics',
+    'churn',
+    'security',
+    'metr-study',
+    'framework',
+    'risk',
+    'readability',
+    'reliability',
+    'resilience',
+    'limits',
+    'stack-prs',
+    'hooks',
+    'guardrails',
+    'guardrails-techniques',
+    'reviewers',
+    'cases',
+    'cases-uk',
+    'closing',
+    'closing-metrics'
   ];
 
   onMount(() => {
@@ -150,19 +166,42 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start !important;
     justify-content: center;
     scroll-behavior: smooth;
-    position: absolute;
+    position: absolute !important;
+    top: 0;
+    left: 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.6s ease-out;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Custom scrollbar styling */
+  :global(.swiper-slide::-webkit-scrollbar) {
+    width: 8px;
+  }
+
+  :global(.swiper-slide::-webkit-scrollbar-track) {
+    background: rgba(10, 22, 40, 0.3);
+    border-radius: 4px;
+  }
+
+  :global(.swiper-slide::-webkit-scrollbar-thumb) {
+    background: rgba(96, 165, 250, 0.5);
+    border-radius: 4px;
+  }
+
+  :global(.swiper-slide::-webkit-scrollbar-thumb:hover) {
+    background: rgba(96, 165, 250, 0.8);
   }
 
   :global(.swiper-slide-active) {
     opacity: 1;
     pointer-events: auto;
-    position: relative;
+    position: relative !important;
   }
 
   /* Navigation Buttons */

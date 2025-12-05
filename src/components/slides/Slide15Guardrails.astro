@@ -1,0 +1,326 @@
+---
+---
+
+<div class="slide slide-guardrails swiper-slide">
+  <div class="slide-background"></div>
+
+  <div class="slide-content">
+    <div class="slide-header">
+      <h2 class="title">Prompts Guardrail</h2>
+      <p class="subtitle">Estructura de prompts para code review asistido</p>
+    </div>
+
+    <div class="guardrails-content">
+      <div class="prompt-structure card-glass">
+        <h3>📋 Anatomía de un Prompt Guardrail</h3>
+        <div class="structure-grid">
+          <div class="structure-item">
+            <div class="structure-number">1</div>
+            <h4>Contexto</h4>
+            <p>Describe el propósito del código, arquitectura relevante, y dependencias</p>
+          </div>
+          <div class="structure-item">
+            <div class="structure-number">2</div>
+            <h4>Tarea</h4>
+            <p>Define exactamente qué debe revisar la IA: seguridad, performance, tests</p>
+          </div>
+          <div class="structure-item">
+            <div class="structure-number">3</div>
+            <h4>Alcance</h4>
+            <p>Especifica archivos/líneas exactas, evita revisiones genéricas</p>
+          </div>
+          <div class="structure-item">
+            <div class="structure-number">4</div>
+            <h4>Limitaciones</h4>
+            <p>Restricciones técnicas: no cambiar API pública, mantener retrocompatibilidad</p>
+          </div>
+          <div class="structure-item">
+            <div class="structure-number">5</div>
+            <h4>Validación</h4>
+            <p>Ejemplos few-shot de buenos/malos resultados, formato esperado</p>
+          </div>
+          <div class="structure-item">
+            <div class="structure-number">6</div>
+            <h4>Chain-of-Thought</h4>
+            <p>Pide a la IA que explique su razonamiento paso a paso</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-prompt card-glass">
+        <h3>💡 Ejemplo de Prompt Efectivo</h3>
+        <div class="prompt-box">
+          <div class="prompt-section">
+            <span class="prompt-label">Contexto:</span>
+            <p>API REST que procesa pagos. Usa Stripe. Crítica para negocio.</p>
+          </div>
+          <div class="prompt-section">
+            <span class="prompt-label">Tarea:</span>
+            <p>Revisa seguridad en payment-handler.ts:45-120</p>
+          </div>
+          <div class="prompt-section">
+            <span class="prompt-label">Alcance:</span>
+            <p>Solo función processPayment(), no toques webhook handlers</p>
+          </div>
+          <div class="prompt-section">
+            <span class="prompt-label">Limitaciones:</span>
+            <p>No cambies la firma del método. Mantén logs existentes.</p>
+          </div>
+          <div class="prompt-section">
+            <span class="prompt-label">Validación:</span>
+            <p>Busca: SQL injection, secrets hardcoded, falta de timeouts</p>
+          </div>
+          <div class="prompt-section">
+            <span class="prompt-label">Output:</span>
+            <p>Lista findings con severidad (Critical/High/Medium). Explica por qué.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .slide-guardrails {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slide-background {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 40% 30%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 60% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    z-index: 1;
+  }
+
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1400px;
+    width: 100%;
+    padding: var(--spacing-3xl);
+    animation: fadeUp 0.8s ease-out;
+  }
+
+  .slide-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    color: var(--color-electric);
+    font-weight: 500;
+  }
+
+  .prompt-structure {
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .prompt-structure h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .structure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .structure-item {
+    padding: var(--spacing-md);
+    background: rgba(10, 22, 40, 0.4);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-electric);
+  }
+
+  .structure-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-electric), var(--color-accent-bright));
+    color: var(--color-base-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-family: var(--font-display);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .structure-item h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-electric);
+  }
+
+  .structure-item p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  .example-prompt {
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .example-prompt h3 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .prompt-box {
+    background: rgba(10, 22, 40, 0.6);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 2px solid rgba(34, 197, 94, 0.3);
+  }
+
+  .prompt-section {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .prompt-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .prompt-label {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: #22c55e;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .prompt-section p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    padding-left: var(--spacing-md);
+  }
+
+  .techniques-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .technique-card {
+    padding: var(--spacing-xl);
+  }
+
+  .technique-card h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .technique-content p {
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.85;
+  }
+
+  .example-box {
+    background: rgba(10, 22, 40, 0.6);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    border-left: 2px solid var(--color-electric);
+  }
+
+  .example-box code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: var(--spacing-xs) 0;
+    opacity: 0.9;
+  }
+
+  .best-practices {
+    padding: var(--spacing-2xl);
+  }
+
+  .best-practices h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .practices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .practice {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(10, 22, 40, 0.4);
+    border-radius: var(--radius-md);
+  }
+
+  .practice-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .practice p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .practice strong {
+    color: var(--color-electric);
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .structure-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .techniques-section, .practices-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .structure-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prompt-structure, .example-prompt, .technique-card, .best-practices {
+      padding: var(--spacing-xl);
+    }
+  }
+</style>
