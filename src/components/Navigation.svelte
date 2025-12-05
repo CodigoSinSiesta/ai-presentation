@@ -1,7 +1,8 @@
 <script>
   import { onMount } from 'svelte';
   import { ChevronLeft, ChevronRight } from 'lucide-svelte';
-  import { animateSlideEntrance, fadeTransition, addButtonHoverAnimation } from '../utils/animations';
+  import gsap from 'gsap';
+  import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
 
   let currentSlide = 0;
   let totalSlides = 5;
@@ -32,7 +33,7 @@
     });
 
     // Handle hash navigation on load
-    const hash = window.location.hash.slice(1);
+    const hash = window.location.hash.replace('#/', '');
     const slideIndex = slideNames.indexOf(hash);
     if (slideIndex !== -1 && slideIndex !== currentSlide) {
       goToSlide(slideIndex);
@@ -40,7 +41,7 @@
 
     // Listen for hash changes
     window.addEventListener('hashchange', () => {
-      const hash = window.location.hash.slice(1);
+      const hash = window.location.hash.replace('#/', '');
       const slideIndex = slideNames.indexOf(hash);
       if (slideIndex !== -1 && slideIndex !== currentSlide) {
         goToSlide(slideIndex);
@@ -64,14 +65,22 @@
   function goToSlide(index) {
     if (index < 0 || index >= slides.length || index === currentSlide) return;
 
-    // Remove active class from current slide
-    slides[currentSlide]?.classList.remove('swiper-slide-active');
-    fadeTransition(slides[currentSlide], 0.3);
+    // Fade out current slide
+    const previousSlide = slides[currentSlide];
+    if (previousSlide) {
+      gsap.to(previousSlide, {
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+        onComplete: () => {
+          previousSlide.classList.remove('swiper-slide-active');
+        }
+      });
+    }
 
     // Add active class to new slide
     currentSlide = index;
     slides[currentSlide]?.classList.add('swiper-slide-active');
-    fadeTransition(slides[currentSlide], 0.6);
     animateSlideEntrance(slides[currentSlide]);
 
     // Update hash
