@@ -68,11 +68,11 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    overflow: hidden;
+    overflow-y: auto;
     background-color: var(--color-base-dark);
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-xl) var(--spacing-2xl);
   }
 
   .slide-background {
@@ -92,7 +92,7 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
     animation: slideDown 0.6s ease-out;
   }
 
@@ -120,7 +120,7 @@
 
   .social-grid {
     display: grid;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-lg);
   }
 
   .comparison {

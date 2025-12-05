@@ -22,15 +22,9 @@ const { title = 'Los Riesgos de la IA - Presentación' } = Astro.props;
     <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <slot />
-
-    <style is:global>
-      @import 'swiper/css';
-      @import 'swiper/css/navigation';
-      @import 'swiper/css/pagination';
-      @import 'swiper/css/keyboard';
-    </style>
   </body>
 </html>
