@@ -162,6 +162,12 @@
     --swiper-theme-color: var(--color-electric);
   }
 
+  :global(.swiper-wrapper) {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
   :global(.swiper-slide) {
     width: 100%;
     height: 100%;
@@ -175,8 +181,8 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.6s ease-out;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+    visibility: hidden;
+    overflow: hidden;
   }
 
   /* Custom scrollbar styling */
@@ -201,7 +207,10 @@
   :global(.swiper-slide-active) {
     opacity: 1;
     pointer-events: auto;
-    position: relative !important;
+    position: absolute !important;
+    visibility: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   /* Navigation Buttons */
