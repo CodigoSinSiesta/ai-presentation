@@ -139,7 +139,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -150,28 +150,28 @@
     transform: translateY(0);
   }
 
-  .slide-header {
-    text-align: center;
-    margin-bottom: var(--spacing-3xl);
-  }
+   .slide-header {
+     text-align: center;
+     margin-bottom: var(--spacing-md);
+   }
 
-  .r-badge {
-    display: inline-block;
-    padding: var(--spacing-sm) var(--spacing-lg);
-    background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
-    color: var(--color-base-dark);
-    font-weight: 900;
-    font-family: var(--font-display);
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-md);
-    font-size: 1.25rem;
-  }
+   .r-badge {
+     display: inline-block;
+     padding: var(--spacing-xs) var(--spacing-md);
+     background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
+     color: var(--color-base-dark);
+     font-weight: 900;
+     font-family: var(--font-display);
+     border-radius: var(--radius-lg);
+     margin-bottom: var(--spacing-sm);
+     font-size: 1rem;
+   }
 
-  .title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
-    margin-bottom: var(--spacing-md);
-  }
+   .title {
+     font-size: clamp(2.5rem, 5vw, 3.5rem);
+     font-weight: 800;
+     margin-bottom: var(--spacing-sm);
+   }
 
   .subtitle {
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
@@ -179,29 +179,29 @@
     font-weight: 500;
   }
 
-  .tdd-workflow {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-2xl);
-    text-align: center;
-  }
+   .tdd-workflow {
+     padding: var(--spacing-card);
+     margin-bottom: var(--spacing-md);
+     text-align: center;
+   }
 
-  .tdd-workflow h3 {
-    margin-bottom: var(--spacing-xl);
-  }
+   .tdd-workflow h3 {
+     margin-bottom: var(--spacing-sm);
+   }
 
-  .workflow-steps {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-lg);
-  }
+   .workflow-steps {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: var(--spacing-sm);
+   }
 
-  .workflow-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-md);
-  }
+   .workflow-step {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: var(--spacing-xs);
+   }
 
   .step-icon {
     width: 70px;
@@ -246,12 +246,12 @@
   .checklist-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .checklist-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     transition: all var(--transition-base);
   }
 
@@ -262,7 +262,7 @@
   h3 {
     font-size: 1.375rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   ul {
@@ -294,14 +294,14 @@
   .coverage-bars {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
   }
 
   .coverage-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
   }
 
   .coverage-item span {
@@ -335,7 +335,7 @@
   .tools {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-grid);
   }
 
   .tool-badge {
@@ -350,11 +350,11 @@
   }
 
   .key-insight {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
     border: 2px solid var(--color-electric);
   }
 
@@ -387,7 +387,7 @@
     }
 
     .checklist-card {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
     }
   }
 </style>

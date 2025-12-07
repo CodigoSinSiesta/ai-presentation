@@ -209,8 +209,7 @@
     pointer-events: auto;
     position: absolute !important;
     visibility: visible;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   /* Navigation Buttons */
@@ -285,7 +284,7 @@
     font-size: 1.25rem;
     color: var(--color-electric);
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-grid);
     align-items: center;
     background: rgba(30, 58, 138, 0.4);
     padding: var(--spacing-md) var(--spacing-lg);

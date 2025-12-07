@@ -113,7 +113,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -126,13 +126,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -144,19 +144,19 @@
   .cases-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
   }
 
   .case-card {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
     border-left: 4px solid var(--color-electric);
   }
 
   .case-header {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .case-header :global(svg) {
@@ -183,8 +183,8 @@
   .case-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .stat-item {
@@ -212,7 +212,7 @@
   }
 
   .case-details {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   .case-details h4 {
@@ -251,13 +251,13 @@
   .case-results {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-grid);
   }
 
   .result {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-sm);
     font-size: 0.85rem;
@@ -285,14 +285,14 @@
   .lessons-learned h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     color: #fb923c;
   }
 
   .lessons-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
   }
 
   .lessons-list li {

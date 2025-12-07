@@ -106,19 +106,19 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     animation: fadeUp 0.8s ease-out;
   }
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -128,19 +128,19 @@
   }
 
   .prompt-structure {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .prompt-structure h3 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .structure-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
   }
 
   .structure-item {
@@ -177,12 +177,12 @@
   }
 
   .example-prompt {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .example-prompt h3 {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   .prompt-box {
@@ -193,7 +193,7 @@
   }
 
   .prompt-section {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .prompt-section:last-child {
@@ -218,21 +218,21 @@
   .techniques-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .technique-card {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
   }
 
   .technique-card h3 {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .technique-content p {
     font-size: 0.95rem;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     opacity: 0.85;
   }
 
@@ -252,24 +252,24 @@
   }
 
   .best-practices {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
   }
 
   .best-practices h3 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .practices-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
   }
 
   .practice {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     padding: var(--spacing-md);
     background: rgba(10, 22, 40, 0.4);
     border-radius: var(--radius-md);
@@ -320,7 +320,7 @@
     }
 
     .prompt-structure, .example-prompt, .technique-card, .best-practices {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
     }
   }
 </style>

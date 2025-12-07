@@ -2,7 +2,7 @@
 import Button from '../ui/Button.astro';
 ---
 
-<div class="slide slide-hero swiper-slide">
+<div class="slide slide-hero swiper-slide swiper-slide-active">
   <div class="slide-background"></div>
 
   <div class="slide-content">
@@ -58,19 +58,19 @@ import Button from '../ui/Button.astro';
     position: relative;
     z-index: 2;
     max-width: 1200px;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     text-align: center;
   }
 
   .slide-header {
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 900;
     line-height: 1.1;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
     animation: fadeUp 0.8s ease-out;
   }
 
@@ -93,12 +93,12 @@ import Button from '../ui/Button.astro';
   .intro-content {
     display: flex;
     justify-content: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
     animation: fadeUp 0.8s ease-out 0.4s backwards;
   }
 
   .author-info {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: left;
     max-width: 500px;
   }
@@ -113,7 +113,7 @@ import Button from '../ui/Button.astro';
   .author-role {
     font-size: 1.125rem;
     color: var(--color-electric);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .author-context {
@@ -163,7 +163,7 @@ import Button from '../ui/Button.astro';
     }
 
     .author-info {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
     }
 
     .author-name {

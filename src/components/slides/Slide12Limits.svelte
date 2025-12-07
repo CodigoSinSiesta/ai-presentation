@@ -115,7 +115,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -128,13 +128,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -146,12 +146,12 @@
   .stats-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .stat-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: center;
     transition: all var(--transition-base);
   }
@@ -162,7 +162,7 @@
 
   .stat-card :global(svg) {
     color: var(--color-electric);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .stat-number {
@@ -170,7 +170,7 @@
     font-weight: 900;
     font-family: var(--font-display);
     color: var(--color-electric);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   h3 {
@@ -185,8 +185,8 @@
   }
 
   .decay-visualization {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .decay-chart {
@@ -194,7 +194,7 @@
     align-items: flex-end;
     justify-content: space-around;
     height: 200px;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     margin: var(--spacing-xl) 0;
   }
 
@@ -219,18 +219,18 @@
     justify-content: space-around;
     font-size: 0.85rem;
     opacity: 0.7;
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-grid);
   }
 
   .recommendations {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
   }
 
   .rules-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-top: var(--spacing-grid);
   }
 
   .rule {
@@ -239,7 +239,7 @@
 
   .rule :global(svg) {
     color: var(--color-electric);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .rule h4 {

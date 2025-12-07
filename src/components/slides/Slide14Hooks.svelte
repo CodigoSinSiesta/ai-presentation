@@ -130,7 +130,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -143,13 +143,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -159,20 +159,20 @@
   }
 
   .pipeline-visual {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .pipeline-visual h3 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .pipeline-stages {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     flex-wrap: wrap;
   }
 
@@ -219,19 +219,19 @@
   .husky-section {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .tool-card, .benefits-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
   }
 
   .tool-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .tool-header h3 {
@@ -263,7 +263,7 @@
   }
 
   .benefits-card h3 {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   ul {
@@ -287,24 +287,24 @@
   }
 
   .example-config {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .example-config h3 {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   .config-box {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
   }
 
   .config-item {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     background: rgba(10, 22, 40, 0.6);
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
@@ -325,11 +325,11 @@
   }
 
   .warning-box {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
     border: 2px solid #fb923c;
     background: rgba(251, 146, 60, 0.05);
   }
@@ -368,7 +368,7 @@
     }
 
     .tool-card, .benefits-card, .example-config {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
     }
   }
 </style>

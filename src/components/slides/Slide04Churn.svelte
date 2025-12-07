@@ -28,7 +28,7 @@
     <div class="churn-grid">
       <div class="stat-card card-glass highlight">
         <div class="icon-wrapper primary">
-          <GitBranch size={44} strokeWidth={2} />
+          <GitBranch size={28} strokeWidth={2} />
         </div>
         <div class="stat-value">
           +<span bind:this={churnEl}>0</span>%
@@ -39,7 +39,7 @@
 
       <div class="stat-card card-glass highlight">
         <div class="icon-wrapper primary">
-          <Copy size={44} strokeWidth={2} />
+          <Copy size={28} strokeWidth={2} />
         </div>
         <div class="stat-value">
           <span bind:this={locEl}>0</span>M
@@ -53,7 +53,7 @@
         <div class="problems-grid">
           <div class="problem-item">
             <div class="icon-wrapper-small">
-              <TrendingUp size={32} strokeWidth={2} />
+              <TrendingUp size={24} strokeWidth={2} />
             </div>
             <div class="problem-content">
               <h4>Menos Refactoring</h4>
@@ -63,7 +63,7 @@
 
           <div class="problem-item">
             <div class="icon-wrapper-small">
-              <Copy size={32} strokeWidth={2} />
+              <Copy size={24} strokeWidth={2} />
             </div>
             <div class="problem-content">
               <h4>Más Copy-Paste</h4>
@@ -73,7 +73,7 @@
 
           <div class="problem-item">
             <div class="icon-wrapper-small">
-              <RefreshCw size={32} strokeWidth={2} />
+              <RefreshCw size={24} strokeWidth={2} />
             </div>
             <div class="problem-content">
               <h4>Ciclos de Reescritura</h4>
@@ -133,7 +133,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -146,13 +146,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -164,11 +164,11 @@
   .churn-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-grid);
   }
 
   .stat-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: center;
     transition: all var(--transition-base);
   }
@@ -182,9 +182,9 @@
   }
 
   .icon-wrapper {
-    width: 75px;
-    height: 75px;
-    margin: 0 auto var(--spacing-lg);
+    width: 50px;
+    height: 50px;
+    margin: 0 auto var(--spacing-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,21 +199,21 @@
   }
 
   .stat-value {
-    font-size: 4rem;
+    font-size: 2.75rem;
     font-weight: 900;
     font-family: var(--font-display);
     background: linear-gradient(135deg, #ef4444, #f87171);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     line-height: 1;
   }
 
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   h4 {
@@ -235,14 +235,14 @@
   }
 
   .problems-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
   }
 
   .problems-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-top: var(--spacing-grid);
   }
 
   .problem-item {
@@ -253,15 +253,15 @@
   }
 
   .icon-wrapper-small {
-    width: 60px;
-    height: 60px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-md);
     background: rgba(239, 68, 68, 0.08);
     color: #f87171;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .problem-content h4 {
@@ -273,19 +273,19 @@
   }
 
   .impact-card {
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-card);
     text-align: center;
   }
 
   .impact-header h3 {
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .impact-items {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-grid);
   }
 
   .impact-item {
@@ -293,21 +293,21 @@
   }
 
   .impact-number {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
     font-family: var(--font-display);
     color: var(--color-electric);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
   }
 
   .impact-label {
-    font-size: 1.125rem;
+    font-size: 0.95rem;
     opacity: 0.8;
   }
 
   .divider {
     width: 2px;
-    height: 80px;
+    height: 50px;
     background: linear-gradient(
       to bottom,
       transparent,

@@ -89,10 +89,15 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
+  }
+
+  .slide-header {
+    text-align: center;
+    margin-bottom: var(--spacing-header);
   }
 
   .slide-content.visible {
@@ -102,13 +107,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -120,11 +125,11 @@
   .paradox-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-grid);
   }
 
   .paradox-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: center;
     transition: all var(--transition-base);
   }
@@ -138,13 +143,13 @@
   }
 
   .icon-wrapper {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--spacing-lg);
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     transition: all var(--transition-base);
   }
 
@@ -169,24 +174,24 @@
   h3 {
     font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   p {
     font-size: 1.125rem;
     opacity: 0.9;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   .metric {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 900;
     font-family: var(--font-display);
     background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
   }
 
   .metric-label {
@@ -198,8 +203,8 @@
   .control-stats {
     display: flex;
     justify-content: space-around;
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-top: var(--spacing-grid);
   }
 
   .stat-item {
@@ -209,16 +214,16 @@
   }
 
   .stat-value {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     font-weight: 900;
     font-family: var(--font-display);
     color: var(--color-electric);
   }
 
   .stat-label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     opacity: 0.7;
-    margin-top: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
   }
 
   @media (max-width: 1024px) {
@@ -237,12 +242,12 @@
     }
 
     .paradox-card {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
     }
 
     .control-stats {
       flex-direction: column;
-      gap: var(--spacing-lg);
+      gap: var(--spacing-grid);
     }
 
     .metric {

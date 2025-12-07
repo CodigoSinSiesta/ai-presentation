@@ -113,7 +113,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: scale(0.95);
     transition: all 0.6s ease-out;
@@ -126,13 +126,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -144,11 +144,11 @@
   .metrics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-grid);
   }
 
   .metric-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: center;
     transition: all var(--transition-base);
   }
@@ -162,9 +162,9 @@
   }
 
   .icon-wrapper {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto var(--spacing-lg);
+    width: 50px;
+    height: 50px;
+    margin: 0 auto var(--spacing-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,9 +175,9 @@
   }
 
   .icon-wrapper-large {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--spacing-lg);
+    width: 60px;
+    height: 60px;
+    margin: 0 auto var(--spacing-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,37 +188,37 @@
   }
 
   .metric-value {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 900;
     font-family: var(--font-display);
     background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     line-height: 1;
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.85;
   }
 
   .comparison-card {
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-card);
     text-align: center;
   }
 
   .comparison-bars {
     display: flex;
-    gap: var(--spacing-2xl);
-    margin: var(--spacing-2xl) 0;
+    gap: var(--spacing-grid);
+    margin: var(--spacing-grid) 0;
     justify-content: center;
   }
 
@@ -230,7 +230,7 @@
   .bar-label {
     font-size: 1.125rem;
     font-weight: 600;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     color: var(--color-electric);
   }
 
@@ -276,7 +276,7 @@
   }
 
   .insight {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-grid);
     font-size: 1rem;
     font-style: italic;
     opacity: 0.9;

@@ -123,19 +123,19 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     animation: fadeUp 0.8s ease-out;
   }
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -147,12 +147,12 @@
   .works-vs-fails {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-2xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .works-card, .fails-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
   }
 
   .works-card {
@@ -166,7 +166,7 @@
   h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   ul {
@@ -202,19 +202,19 @@
   }
 
   .adoption-plan {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .adoption-plan h3 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .timeline {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
   }
 
   .week {
@@ -235,7 +235,7 @@
     justify-content: center;
     font-weight: 900;
     font-family: var(--font-display);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     font-size: 1.125rem;
   }
 
@@ -258,25 +258,25 @@
   }
 
   .key-metrics {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .key-metrics h3 {
     text-align: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   .metrics-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
   }
 
   .metric {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-grid);
     padding: var(--spacing-md);
     background: rgba(10, 22, 40, 0.4);
     border-radius: var(--radius-md);
@@ -297,20 +297,20 @@
   }
 
   .final-message {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
     text-align: center;
   }
 
   .final-message h3 {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   .quote {
     font-size: 1.25rem;
     font-style: italic;
     line-height: 1.6;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
     color: var(--color-electric);
   }
 
@@ -324,13 +324,13 @@
   .framework-reminder p {
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .rs {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     flex-wrap: wrap;
   }
 
@@ -392,7 +392,7 @@
     }
 
     .works-card, .fails-card, .adoption-plan, .key-metrics, .final-message {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
     }
   }
 </style>

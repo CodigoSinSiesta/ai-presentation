@@ -111,7 +111,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -124,13 +124,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -142,31 +142,31 @@
   .techniques-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-grid);
   }
 
   .techniques-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
   }
 
   .technique-card {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
     border-left: 4px solid var(--color-electric);
   }
 
   .technique-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     color: var(--color-electric);
   }
 
   .technique-body {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
   }
 
   .description {
@@ -233,26 +233,26 @@
   }
 
   .best-practices {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
   }
 
   .best-practices h3 {
     text-align: center;
     font-size: 1.25rem;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
     color: var(--color-electric);
   }
 
   .practices-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
   }
 
   .practice-item {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     padding: var(--spacing-md);
     background: rgba(10, 22, 40, 0.4);
     border-radius: var(--radius-md);
@@ -274,7 +274,7 @@
   }
 
   .key-takeaway {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
     text-align: center;
     border: 2px solid var(--color-electric);
     background: rgba(59, 130, 246, 0.05);

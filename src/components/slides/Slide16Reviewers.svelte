@@ -167,7 +167,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -178,16 +178,16 @@
     transform: translateY(0);
   }
 
-  .slide-header {
-    text-align: center;
-    margin-bottom: var(--spacing-3xl);
-  }
+   .slide-header {
+     text-align: center;
+     margin-bottom: var(--spacing-md);
+   }
 
-  .title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
-    margin-bottom: var(--spacing-md);
-  }
+   .title {
+     font-size: clamp(2.5rem, 5vw, 3.5rem);
+     font-weight: 800;
+     margin-bottom: var(--spacing-sm);
+   }
 
   .subtitle {
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
@@ -195,15 +195,15 @@
     font-weight: 500;
   }
 
-  .tools-showcase {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-2xl);
-  }
+   .tools-showcase {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: var(--spacing-md);
+     margin-bottom: var(--spacing-md);
+   }
 
   .tool-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: center;
     transition: all var(--transition-base);
     border-top: 3px solid var(--color-electric);
@@ -213,30 +213,30 @@
     transform: translateY(-8px);
   }
 
-  .tool-icon {
-    margin: 0 auto var(--spacing-md);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--color-electric);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+   .tool-icon {
+     margin: 0 auto var(--spacing-sm);
+     width: 56px;
+     height: 56px;
+     border-radius: 50%;
+     background: rgba(59, 130, 246, 0.1);
+     color: var(--color-electric);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
 
-  .tool-card h3 {
-    font-size: 1.375rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
-  }
+   .tool-card h3 {
+     font-size: 1.125rem;
+     font-weight: 700;
+     margin-bottom: var(--spacing-sm);
+   }
 
-  .tool-features {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-lg);
-  }
+   .tool-features {
+     display: flex;
+     flex-direction: column;
+     gap: var(--spacing-sm);
+     margin-bottom: var(--spacing-sm);
+   }
 
   .feature {
     font-size: 0.85rem;
@@ -272,27 +272,27 @@
   }
 
   .workflow-section {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .workflow-section h3 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .workflow-diagram {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     flex-wrap: wrap;
   }
 
   .workflow-step {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     padding: var(--spacing-md);
     background: rgba(10, 22, 40, 0.4);
     border-radius: var(--radius-md);
@@ -333,16 +333,16 @@
   .comparison-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .comparison-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
   }
 
   .comparison-card h3 {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   ul {
@@ -366,11 +366,11 @@
   }
 
   .golden-rule {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
     border: 2px solid var(--color-electric);
     background: rgba(59, 130, 246, 0.05);
   }
@@ -391,7 +391,8 @@
 
   @media (max-width: 1024px) {
     .tools-showcase {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-grid);
     }
 
     .workflow-diagram {
@@ -400,20 +401,63 @@
 
     .workflow-arrow {
       transform: rotate(90deg);
+      margin: var(--spacing-md) 0;
     }
 
     .comparison-section {
       grid-template-columns: 1fr;
+      gap: var(--spacing-grid);
     }
   }
 
   @media (max-width: 768px) {
+    .tools-showcase {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-grid);
+    }
+
     .slide-content {
-      padding: var(--spacing-2xl) var(--spacing-lg);
+      padding: var(--spacing-content);
     }
 
     .tool-card, .workflow-section, .comparison-card {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
+    }
+
+    .tool-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    .tool-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .workflow-step {
+      padding: var(--spacing-md);
+    }
+
+    .workflow-step h4 {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tools-showcase {
+      gap: var(--spacing-grid);
+    }
+
+    .tool-card {
+      padding: var(--spacing-md);
+    }
+
+    .workflow-diagram {
+      gap: var(--spacing-grid);
+    }
+
+    .workflow-step {
+      padding: var(--spacing-sm);
+      font-size: 0.9rem;
     }
   }
 </style>

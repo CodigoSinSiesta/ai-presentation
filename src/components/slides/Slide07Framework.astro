@@ -136,19 +136,19 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     animation: fadeUp 0.8s ease-out;
   }
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(3rem, 7vw, 5rem);
     font-weight: 900;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -164,12 +164,12 @@
   .framework-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-3xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-header);
   }
 
   .r-card {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: center;
     transition: all var(--transition-base);
     position: relative;
@@ -228,7 +228,7 @@
   .r-card h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     color: var(--color-electric);
   }
 
@@ -236,12 +236,12 @@
     font-size: 0.95rem;
     opacity: 0.85;
     line-height: 1.5;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-grid);
   }
 
   .r-tools {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-grid);
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -258,29 +258,29 @@
   }
 
   .framework-flow {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .framework-flow h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .flow-steps {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-grid);
   }
 
   .flow-step {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
   }
 
   .step-number {
@@ -310,7 +310,7 @@
 
   .key-message {
     text-align: center;
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-card);
     border-top: 2px solid rgba(96, 165, 250, 0.2);
   }
 
@@ -347,7 +347,7 @@
 
     .framework-grid {
       grid-template-columns: 1fr;
-      gap: var(--spacing-lg);
+      gap: var(--spacing-grid);
     }
 
     .flow-steps {

@@ -125,7 +125,7 @@
     z-index: 2;
     max-width: 1400px;
     width: 100%;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-content);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -138,13 +138,13 @@
 
   .slide-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-header);
   }
 
   .title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .subtitle {
@@ -154,16 +154,16 @@
   }
 
   .case-card {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
     border-left: 4px solid var(--color-electric);
   }
 
   .case-header {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .case-header :global(svg) {
@@ -189,8 +189,8 @@
   .case-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
+    gap: var(--spacing-grid);
+    margin-bottom: var(--spacing-grid);
   }
 
   .stat-item {
@@ -218,13 +218,13 @@
   }
 
   .case-details {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .case-details h4 {
     font-size: 1.125rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
     color: var(--color-electric);
   }
 
@@ -256,13 +256,13 @@
   .case-results {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-grid);
   }
 
   .result {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--spacing-grid);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-sm);
   }
@@ -283,19 +283,19 @@
   }
 
   .lessons-learned {
-    padding: var(--spacing-2xl);
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-card);
+    margin-bottom: var(--spacing-grid);
   }
 
   .lessons-learned h3 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-grid);
   }
 
   .lessons-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-grid);
   }
 
   .lesson {
@@ -311,7 +311,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .lesson-icon.success {
@@ -327,11 +327,11 @@
   .lesson h4 {
     font-size: 1.125rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-grid);
   }
 
   .takeaway {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-card);
     text-align: center;
     border: 2px solid var(--color-electric);
     background: rgba(59, 130, 246, 0.05);
@@ -358,7 +358,7 @@
     }
 
     .case-card, .lessons-learned {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-card);
     }
 
     .stat-number {

@@ -58,6 +58,12 @@
   --z-modal: 1040;
   --z-popover: 1050;
   --z-tooltip: 1060;
+
+  /* Responsive spacing variables (default for desktop) */
+  --spacing-content: var(--spacing-lg);
+  --spacing-header: var(--spacing-md);
+  --spacing-grid: var(--spacing-md);
+  --spacing-card: var(--spacing-md);
 }
 
 /* ============================================
@@ -358,6 +364,37 @@ a:hover {
 }
 
 /* ============================================
+   RESPONSIVE SPACING VARIABLES
+   ============================================ */
+
+@media (max-width: 1024px) {
+  :root {
+    --spacing-content: var(--spacing-2xl);
+    --spacing-header: var(--spacing-2xl);
+    --spacing-grid: var(--spacing-xl);
+    --spacing-card: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-content: var(--spacing-lg);
+    --spacing-header: var(--spacing-lg);
+    --spacing-grid: var(--spacing-lg);
+    --spacing-card: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-content: var(--spacing-md);
+    --spacing-header: var(--spacing-md);
+    --spacing-grid: var(--spacing-md);
+    --spacing-card: var(--spacing-md);
+  }
+}
+
+/* ============================================
    RESPONSIVE TYPOGRAPHY
    ============================================ */
 
@@ -381,6 +418,38 @@ a:hover {
   .btn {
     padding: var(--spacing-md) var(--spacing-xl);
     font-size: 0.9rem;
+  }
+
+  /* Optimize metric typography for mobile */
+  .metric {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Optimize cards for mobile */
+  .card-glass {
+    border-radius: var(--radius-md);
+  }
+
+  /* Optimize icon sizes for mobile */
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tool-icon {
+    width: 60px;
+    height: 60px;
   }
 }
 
