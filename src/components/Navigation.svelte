@@ -5,7 +5,7 @@
   import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
 
   let currentSlide = 0;
-  let totalSlides = 21;
+  let totalSlides = 11;
   let slides = [];
 
   const slideNames = [
@@ -13,23 +13,13 @@
     'paradox',
     'metrics',
     'churn',
-    'security',
-    'metr-study',
-    'framework',
-    'risk',
-    'readability',
-    'reliability',
-    'resilience',
-    'limits',
-    'stack-prs',
-    'hooks',
-    'guardrails',
-    'guardrails-techniques',
-    'reviewers',
-    'cases',
-    'cases-uk',
-    'closing',
-    'closing-metrics'
+    'best-practices',
+    'prompt-formula',
+    'context',
+    'agents',
+    'mcps',
+    'workshop',
+    'feedback'
   ];
 
   onMount(() => {

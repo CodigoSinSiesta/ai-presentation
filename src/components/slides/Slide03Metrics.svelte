@@ -232,6 +232,7 @@
     font-weight: 600;
     margin-bottom: var(--spacing-grid);
     color: var(--color-electric);
+    text-align: center;
   }
 
   .bar {
@@ -249,6 +250,7 @@
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(96, 165, 250, 0.2));
     border: 2px solid var(--color-electric);
     width: 40%;
+    margin: 0 auto;
   }
 
   .bar.ai {
