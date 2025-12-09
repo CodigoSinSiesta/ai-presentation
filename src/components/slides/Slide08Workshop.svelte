@@ -7,7 +7,7 @@
   let copyButtonIcon = '🔑';
 
   // Token to copy - can be customized
-  const TOKEN = 'Esto es un ejemplo';
+  const TOKEN = 'sk-bc623f8f0f7e41d59d38343af5a47b47';
 
   onMount(() => {
     animateSlideEntrance(slideElement);
