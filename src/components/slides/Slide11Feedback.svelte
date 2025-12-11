@@ -70,7 +70,7 @@
       <div class="contact-box card-glass">
         <h3 class="contact-heading">¿Preguntas o Sugerencias?</h3>
         <p class="contact-text">
-          Puedes contactarme directamente en <a href="https://tellmeales.dev" target="_blank" rel="noopener noreferrer" class="contact-link">tellmeales.dev</a>
+          Puedes contactarme directamente en <a href="https://tellmealex.dev" target="_blank" rel="noopener noreferrer" class="contact-link">tellmealex.dev</a>
         </p>
       </div>
     </div>
