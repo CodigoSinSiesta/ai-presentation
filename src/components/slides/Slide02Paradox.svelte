@@ -75,6 +75,18 @@
     overflow: hidden;
   }
 
+  @media (max-width: 600px) {
+    .slide-paradox {
+      height: 100vh;
+      min-height: 100vh;
+      overflow: visible;
+      overflow-y: auto;
+      align-items: flex-start;
+      padding-top: var(--spacing-lg);
+      padding-bottom: var(--spacing-lg);
+    }
+  }
+
   .slide-background {
     position: absolute;
     inset: 0;
@@ -238,7 +250,7 @@
 
   @media (max-width: 768px) {
     .slide-content {
-      padding: var(--spacing-2xl) var(--spacing-lg);
+      padding: var(--spacing-lg) var(--spacing-md);
     }
 
     .paradox-card {
@@ -251,11 +263,50 @@
     }
 
     .metric {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     .stat-value {
-      font-size: 2rem;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-sm);
+    }
+  }
+
+  @media (max-height: 800px) and (max-width: 480px) {
+    .paradox-grid {
+      gap: var(--spacing-xs);
+    }
+
+    .paradox-card {
+      padding: var(--spacing-sm);
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    p {
+      font-size: 0.85rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .metric {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
     }
   }
 </style>

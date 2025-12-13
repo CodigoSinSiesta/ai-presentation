@@ -99,6 +99,18 @@
     overflow: hidden;
   }
 
+  @media (max-width: 600px) {
+    .slide-cases-uk {
+      height: 100vh;
+      min-height: 100vh;
+      overflow: visible;
+      overflow-y: auto;
+      align-items: flex-start;
+      padding-top: var(--spacing-lg);
+      padding-bottom: var(--spacing-lg);
+    }
+  }
+
   .slide-background {
     position: absolute;
     inset: 0;

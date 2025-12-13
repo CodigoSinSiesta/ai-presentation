@@ -178,4 +178,15 @@
       padding: var(--spacing-lg);
     }
   }
+
+  @media (max-width: 600px) {
+    .swiper-slide {
+      height: 100vh;
+      overflow: visible;
+      overflow-y: auto;
+      align-items: flex-start;
+      padding-top: var(--spacing-lg);
+      padding-bottom: var(--spacing-lg);
+    }
+  }
 </style>
