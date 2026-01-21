@@ -5,7 +5,7 @@
   import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
 
   let currentSlide = 0;
-  let totalSlides = 11;
+  let totalSlides = 10;
   let slides = [];
 
   const slideNames = [
@@ -18,8 +18,7 @@
     'context',
     'agents',
     'mcps',
-    'workshop',
-    'feedback'
+    'workshop'
   ];
 
   onMount(() => {

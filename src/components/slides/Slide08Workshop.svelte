@@ -3,42 +3,12 @@
   import { animateSlideEntrance } from '@/utils/animations';
 
   let slideElement: HTMLElement;
-  let copyButtonText = 'Copiar Token';
-  let copyButtonIcon = '🔑';
-
-  // Token to copy - can be customized
-  const TOKEN = 'sk-bc623f8f0f7e41d59d38343af5a47b47';
+  // Token to copy - removed
 
   onMount(() => {
     animateSlideEntrance(slideElement);
   });
 
-  async function copyToken() {
-    try {
-      await navigator.clipboard.writeText(TOKEN);
-      
-      // Visual feedback
-      copyButtonText = '¡Copiado!';
-      copyButtonIcon = '✓';
-      
-      // Reset after 2 seconds
-      setTimeout(() => {
-        copyButtonText = 'Copiar Token';
-        copyButtonIcon = '🔑';
-      }, 2000);
-    } catch (err) {
-      console.error('Error copying to clipboard:', err);
-      
-      // Fallback visual feedback
-      copyButtonText = 'Error al copiar';
-      copyButtonIcon = '✗';
-      
-      setTimeout(() => {
-        copyButtonText = 'Copiar Token';
-        copyButtonIcon = '🔑';
-      }, 2000);
-    }
-  }
 </script>
 
 <div class="swiper-slide" bind:this={slideElement}>
@@ -67,10 +37,6 @@
           <span class="cta-text">¡Vamos al Taller!</span>
           <span class="cta-arrow">→</span>
         </a>
-        <button class="cta-button cta-secondary" id="copyTokenBtn" on:click={copyToken}>
-          <span class="cta-icon">{copyButtonIcon}</span>
-          <span class="cta-text">{copyButtonText}</span>
-        </button>
       </div>
     </div>
 
