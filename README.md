@@ -99,6 +99,18 @@ pnpm run dev
 
 The presentation will be available at **http://localhost:4321**
 
+### Workshop Slide Visibility
+
+By default, the last slide (workshop slide) is **hidden**. To display it for specific events:
+
+- **Development**: Add `?showWorkshop=true` to the URL
+  - Example: `http://localhost:4321/?showWorkshop=true`
+  
+- **Production**: Add `?showWorkshop=true` to the live URL
+  - Example: `https://codigosinsiesta.github.io/ai-presentation/?showWorkshop=true`
+
+This allows the workshop slide to be shown only when needed for specific presentations or events.
+
 ### Build for Production
 
 ```bash

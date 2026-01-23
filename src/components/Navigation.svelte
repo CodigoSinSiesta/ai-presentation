@@ -5,10 +5,11 @@
   import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
 
   let currentSlide = 0;
-  let totalSlides = 10;
+  let totalSlides = 9; // Default: hide workshop slide
   let slides = [];
+  let showWorkshop = false; // Control workshop slide visibility
 
-  const slideNames = [
+  const allSlideNames = [
     'hero',
     'paradox',
     'metrics',
@@ -20,10 +21,30 @@
     'mcps',
     'workshop'
   ];
+  
+  let slideNames = [];
 
   onMount(() => {
+    // Check URL parameters for workshop visibility
+    const urlParams = new URLSearchParams(window.location.search);
+    showWorkshop = urlParams.get('showWorkshop') === 'true';
+    
+    // Update slide names based on workshop visibility
+    slideNames = showWorkshop ? allSlideNames : allSlideNames.slice(0, -1);
+    totalSlides = slideNames.length;
+
     // Get all slides
     slides = Array.from(document.querySelectorAll('.swiper-slide'));
+    
+    // Hide workshop slide if not enabled
+    if (!showWorkshop && slides.length === allSlideNames.length) {
+      const workshopSlide = slides[slides.length - 1];
+      if (workshopSlide) {
+        workshopSlide.style.display = 'none';
+      }
+      // Only use visible slides for navigation
+      slides = slides.slice(0, -1);
+    }
 
     // Add swiper-slide-active class to first slide
     if (slides.length > 0) {
