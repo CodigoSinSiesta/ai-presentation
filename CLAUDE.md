@@ -25,42 +25,25 @@ pnpm run preview    # Preview production build
 
 ### Navigation System
 - Custom Svelte-based navigation in `Navigation.svelte` (not using Swiper.js library)
-- Hash routing: `#/hero`, `#/paradox`, `#/metrics`, etc. (21 slides total)
+- Hash routing: `#/hero`, `#/paradox`, `#/metrics`, etc.
 - Manual slide management with opacity transitions via GSAP
 - Keyboard navigation (arrow keys), click navigation (prev/next buttons)
 - All slides are absolutely positioned; only active slide has `swiper-slide-active` class
+- **Workshop slide visibility**: The last slide (`Slide08Workshop.svelte`) is hidden by default. To show it, add `?showWorkshop=true` to the URL. This is controlled in `Navigation.svelte` by checking URL parameters.
 
 ### Slide Structure
-All 21 slides live in `src/components/slides/`:
+All slides live in `src/components/slides/`:
 
-**Introduction & Problem (1-6)**
 1. `Slide01Hero.astro` - Hero/introduction
 2. `Slide02Paradox.svelte` - Paradox of vibe coding (high adoption, low confidence)
 3. `Slide03Metrics.svelte` - Overhead metrics with animated counters
 4. `Slide04Churn.svelte` - Code churn analysis
-5. `Slide05Security.astro` - Security risks
-6. `Slide06METR.svelte` - METR 2025 study results
-
-**4R Framework (7-11)**
-7. `Slide07Framework.astro` - 4R framework introduction
-8. `Slide08Risk.svelte` - R1: Security risk assessment
-9. `Slide09Readability.astro` - R2: Code quality standards
-10. `Slide10Reliability.svelte` - R3: TDD with AI
-11. `Slide11Resilience.astro` - R4: System resilience patterns
-
-**Practical Tools (12-14)**
-12. `Slide12Limits.svelte` - Human cognitive limits in code review
-13. `Slide13StackPRs.astro` - Stack PRs methodology
-14. `Slide14Hooks.svelte` - Pre-commit hooks with Husky
-
-**Tools & Cases (15-18)**
-15. `Slide15Guardrails.astro` - Prompt guardrail structure
-16. `Slide15B.svelte` - Advanced prompt techniques (Few-Shot, Chain-of-Thought)
-17. `Slide16Reviewers.svelte` - Augmented reviewers (Copilot, CodeRabbit, Kudu)
-18. `Slide17Cases.svelte` - Real case studies (Amazon, UK Government)
-19. `Slide17B.svelte` - UK Government deep dive
-20. `Slide18Closing.astro` - Action plan and conclusion
-21. `Slide18B.astro` - Success metrics and final thoughts
+5. `Slide05BestPractices.svelte` - Best practices for AI coding
+6. `Slide06PromptFormula.svelte` - Prompt engineering formulas
+7. `Slide05Context.svelte` - Context window management
+8. `Slide06Agents.svelte` - AI Agents introduction
+9. `Slide07MCPs.svelte` - Model Context Protocol (MCP) servers
+10. `Slide08Workshop.svelte` - Workshop information (**Hidden by default**, shown with `?showWorkshop=true`)
 
 Each slide is a `.swiper-slide` that becomes visible when active.
 

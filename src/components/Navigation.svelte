@@ -5,10 +5,9 @@
   import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
 
   let currentSlide = 0;
-  let totalSlides = 10;
   let slides = [];
 
-  const slideNames = [
+  const allSlideNames = [
     'hero',
     'paradox',
     'metrics',
@@ -20,10 +19,52 @@
     'mcps',
     'workshop'
   ];
+  
+  // Check URL parameters for workshop visibility (must be done before mount for SSR)
+  let showWorkshop = false;
+  let slideNames = [];
+  let totalSlides = 9;
+  
+  // Helper function to check workshop visibility from URL
+  function shouldShowWorkshop() {
+    if (typeof window === 'undefined') return false;
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('showWorkshop') === 'true';
+  }
+  
+  // Initialize slide configuration
+  function initializeSlides() {
+    showWorkshop = shouldShowWorkshop();
+    slideNames = showWorkshop ? allSlideNames : allSlideNames.slice(0, -1);
+    totalSlides = slideNames.length;
+  }
+  
+  // Initialize on script load
+  initializeSlides();
 
   onMount(() => {
-    // Get all slides
+    // Re-initialize in case URL changed (shouldn't happen, but defensive)
+    const wasShowingWorkshop = showWorkshop;
+    initializeSlides();
+    
+    // Only need to update if state changed
+    if (wasShowingWorkshop !== showWorkshop) {
+      // State changed, will trigger re-render
+    }
+
+    // Get all slides from DOM
     slides = Array.from(document.querySelectorAll('.swiper-slide'));
+    
+    // Hide workshop slide if not enabled and all slides are present in DOM
+    // This handles the case where Astro renders all 10 slides but we only want 9
+    if (!showWorkshop && slides.length > slideNames.length) {
+      const workshopSlide = slides[slides.length - 1];
+      if (workshopSlide) {
+        workshopSlide.style.display = 'none';
+      }
+      // Only use visible slides for navigation
+      slides = slides.slice(0, slideNames.length);
+    }
 
     // Add swiper-slide-active class to first slide
     if (slides.length > 0) {
