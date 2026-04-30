@@ -5,18 +5,24 @@
 
   let slowerEl, fasterEl;
   let visible = false;
+  let slideElement;
 
   onMount(() => {
     visible = true;
 
-    setTimeout(() => {
-      if (slowerEl) animateCounter(slowerEl, 19, 2);
-      if (fasterEl) animateCounter(fasterEl, 20, 2);
-    }, 300);
+    const replay = () => {
+      setTimeout(() => {
+        if (slowerEl) animateCounter(slowerEl, 19, 2);
+        if (fasterEl) animateCounter(fasterEl, 20, 2);
+      }, 300);
+    };
+
+    slideElement.addEventListener('slide-activated', replay);
+    return () => slideElement.removeEventListener('slide-activated', replay);
   });
 </script>
 
-<div class="slide slide-metr swiper-slide">
+<div class="slide slide-metr swiper-slide" bind:this={slideElement}>
   <div class="slide-background"></div>
 
   <div class="slide-content" class:visible>

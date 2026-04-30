@@ -5,20 +5,25 @@
 
   let prSizeEl, reviewTimeEl, bugsEl;
   let visible = false;
+  let slideElement;
 
   onMount(() => {
     visible = true;
 
-    // Animate counters after slide appears
-    setTimeout(() => {
-      if (prSizeEl) animateCounter(prSizeEl, 154, 2);
-      if (reviewTimeEl) animateCounter(reviewTimeEl, 91, 2);
-      if (bugsEl) animateCounter(bugsEl, 9, 2);
-    }, 300);
+    const replay = () => {
+      setTimeout(() => {
+        if (prSizeEl) animateCounter(prSizeEl, 154, 2);
+        if (reviewTimeEl) animateCounter(reviewTimeEl, 91, 2);
+        if (bugsEl) animateCounter(bugsEl, 9, 2);
+      }, 300);
+    };
+
+    slideElement.addEventListener('slide-activated', replay);
+    return () => slideElement.removeEventListener('slide-activated', replay);
   });
 </script>
 
-<div class="slide slide-metrics swiper-slide">
+<div class="slide slide-metrics swiper-slide" bind:this={slideElement}>
   <div class="slide-background"></div>
 
   <div class="slide-content" class:visible>

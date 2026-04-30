@@ -5,17 +5,24 @@
 
   let detectionEl, attentionEl;
   let visible = false;
+  let slideElement;
 
   onMount(() => {
     visible = true;
-    setTimeout(() => {
-      if (detectionEl) animateCounter(detectionEl, 70, 2);
-      if (attentionEl) animateCounter(attentionEl, 400, 2);
-    }, 300);
+
+    const replay = () => {
+      setTimeout(() => {
+        if (detectionEl) animateCounter(detectionEl, 70, 2);
+        if (attentionEl) animateCounter(attentionEl, 400, 2);
+      }, 300);
+    };
+
+    slideElement.addEventListener('slide-activated', replay);
+    return () => slideElement.removeEventListener('slide-activated', replay);
   });
 </script>
 
-<div class="slide slide-limits swiper-slide">
+<div class="slide slide-limits swiper-slide" bind:this={slideElement}>
   <div class="slide-background"></div>
 
   <div class="slide-content" class:visible>

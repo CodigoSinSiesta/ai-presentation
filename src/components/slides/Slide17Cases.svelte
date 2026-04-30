@@ -5,19 +5,26 @@
 
   let visible = false;
   let amazonSavingsEl, amazonDevsEl, ukMigratedEl, ukBugsEl;
+  let slideElement;
 
   onMount(() => {
     visible = true;
-    setTimeout(() => {
-      if (amazonSavingsEl) animateCounter(amazonSavingsEl, 260, 2);
-      if (amazonDevsEl) animateCounter(amazonDevsEl, 5000, 0);
-      if (ukMigratedEl) animateCounter(ukMigratedEl, 30000, 0);
-      if (ukBugsEl) animateCounter(ukBugsEl, 0, 0);
-    }, 300);
+
+    const replay = () => {
+      setTimeout(() => {
+        if (amazonSavingsEl) animateCounter(amazonSavingsEl, 260, 2);
+        if (amazonDevsEl) animateCounter(amazonDevsEl, 5000, 0);
+        if (ukMigratedEl) animateCounter(ukMigratedEl, 30000, 0);
+        if (ukBugsEl) animateCounter(ukBugsEl, 0, 0);
+      }, 300);
+    };
+
+    slideElement.addEventListener('slide-activated', replay);
+    return () => slideElement.removeEventListener('slide-activated', replay);
   });
 </script>
 
-<div class="slide slide-cases swiper-slide">
+<div class="slide slide-cases swiper-slide" bind:this={slideElement}>
   <div class="slide-background"></div>
 
   <div class="slide-content" class:visible>

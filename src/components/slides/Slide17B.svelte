@@ -5,17 +5,24 @@
 
   let visible = false;
   let ukMigratedEl, ukBugsEl;
+  let slideElement;
 
   onMount(() => {
     visible = true;
-    setTimeout(() => {
-      if (ukMigratedEl) animateCounter(ukMigratedEl, 30000, 0);
-      if (ukBugsEl) animateCounter(ukBugsEl, 0, 0);
-    }, 300);
+
+    const replay = () => {
+      setTimeout(() => {
+        if (ukMigratedEl) animateCounter(ukMigratedEl, 30000, 0);
+        if (ukBugsEl) animateCounter(ukBugsEl, 0, 0);
+      }, 300);
+    };
+
+    slideElement.addEventListener('slide-activated', replay);
+    return () => slideElement.removeEventListener('slide-activated', replay);
   });
 </script>
 
-<div class="slide slide-cases-uk swiper-slide">
+<div class="slide slide-cases-uk swiper-slide" bind:this={slideElement}>
   <div class="slide-background"></div>
 
   <div class="slide-content" class:visible>

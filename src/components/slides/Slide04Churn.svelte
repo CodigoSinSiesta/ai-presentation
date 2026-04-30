@@ -5,18 +5,24 @@
 
   let churnEl, locEl;
   let visible = false;
+  let slideElement;
 
   onMount(() => {
     visible = true;
 
-    setTimeout(() => {
-      if (churnEl) animateCounter(churnEl, 41, 2);
-      if (locEl) animateCounter(locEl, 211, 2);
-    }, 300);
+    const replay = () => {
+      setTimeout(() => {
+        if (churnEl) animateCounter(churnEl, 41, 2);
+        if (locEl) animateCounter(locEl, 211, 2);
+      }, 300);
+    };
+
+    slideElement.addEventListener('slide-activated', replay);
+    return () => slideElement.removeEventListener('slide-activated', replay);
   });
 </script>
 
-<div class="slide slide-churn swiper-slide">
+<div class="slide slide-churn swiper-slide" bind:this={slideElement}>
   <div class="slide-background"></div>
 
   <div class="slide-content" class:visible>

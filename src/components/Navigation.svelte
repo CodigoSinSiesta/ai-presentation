@@ -70,6 +70,7 @@
     if (slides.length > 0) {
       slides[0].classList.add('swiper-slide-active');
       animateSlideEntrance(slides[0]);
+      slides[0].dispatchEvent(new CustomEvent('slide-activated'));
     }
 
     // Add hover animations to buttons
@@ -128,6 +129,7 @@
     currentSlide = index;
     slides[currentSlide]?.classList.add('swiper-slide-active');
     animateSlideEntrance(slides[currentSlide]);
+    slides[currentSlide]?.dispatchEvent(new CustomEvent('slide-activated'));
 
     // Update hash
     updateHash(slideNames[currentSlide]);
