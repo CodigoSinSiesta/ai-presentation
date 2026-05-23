@@ -14,6 +14,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^6.0.2
         version: 6.0.2(astro@4.16.19(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3))(tailwindcss@4.1.17)
+      '@codigosinsiesta/theme':
+        specifier: github:CodigoSinSiesta/theme
+        version: https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/e608a6f4b79a3c16d4f1b72aaf15462b82e0f211(svelte@5.45.5)
       astro:
         specifier: ^4.16.18
         version: 4.16.19(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)
@@ -190,6 +193,15 @@ packages:
   '@babel/types@7.28.5':
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
+
+  '@codigosinsiesta/theme@https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/e608a6f4b79a3c16d4f1b72aaf15462b82e0f211':
+    resolution: {tarball: https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/e608a6f4b79a3c16d4f1b72aaf15462b82e0f211}
+    version: 0.7.0
+    peerDependencies:
+      svelte: '>=5.0.0'
+    peerDependenciesMeta:
+      svelte:
+        optional: true
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -2445,7 +2457,7 @@ snapshots:
 
   '@astrojs/svelte@7.2.2(astro@4.16.19(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.5)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.1.1(svelte@5.45.5)(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte': 5.1.1(svelte@5.45.5)(vite@5.4.21(lightningcss@1.30.2))
       astro: 4.16.19(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)
       svelte: 5.45.5
       svelte2tsx: 0.7.45(svelte@5.45.5)(typescript@5.9.3)
@@ -2612,6 +2624,10 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
+
+  '@codigosinsiesta/theme@https://codeload.github.com/CodigoSinSiesta/theme/tar.gz/e608a6f4b79a3c16d4f1b72aaf15462b82e0f211(svelte@5.45.5)':
+    optionalDependencies:
+      svelte: 5.45.5
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
@@ -3011,14 +3027,14 @@ snapshots:
 
   '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.45.5)(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)))(svelte@5.45.5)(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 5.1.1(svelte@5.45.5)(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
+      '@sveltejs/vite-plugin-svelte': 5.1.1(svelte@5.45.5)(vite@5.4.21(lightningcss@1.30.2))
       debug: 4.4.3
       svelte: 5.45.5
       vite: 6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.45.5)(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))':
+  '@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.45.5)(vite@5.4.21(lightningcss@1.30.2))':
     dependencies:
       '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.1.1(svelte@5.45.5)(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)))(svelte@5.45.5)(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
       debug: 4.4.3
@@ -3026,7 +3042,7 @@ snapshots:
       kleur: 4.1.5
       magic-string: 0.30.21
       svelte: 5.45.5
-      vite: 6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2)
+      vite: 5.4.21(lightningcss@1.30.2)
       vitefu: 1.1.1(vite@6.4.1(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
     transitivePeerDependencies:
       - supports-color
