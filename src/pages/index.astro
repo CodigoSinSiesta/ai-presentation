@@ -1,7 +1,7 @@
 ---
 import PresentationLayout from '../layouts/PresentationLayout.astro';
 import Navigation from '../components/Navigation.svelte';
-import Slide01Hero from '../components/slides/Slide01Hero.svelte';
+import Slide01Hero from '../components/slides/Slide01Hero.astro';
 import Slide02Paradox from '../components/slides/Slide02Paradox.svelte';
 import Slide03Metrics from '../components/slides/Slide03Metrics.svelte';
 import Slide04Churn from '../components/slides/Slide04Churn.svelte';
@@ -15,7 +15,7 @@ import Slide10Workshop from '../components/slides/Slide08Workshop.svelte';
 
 <PresentationLayout title="IA Generativa - Conceptos Fundamentales">
   <Navigation client:load>
-    <Slide01Hero client:load />
+    <Slide01Hero />
     <Slide02Paradox client:load />
     <Slide03Metrics client:load />
     <Slide04Churn client:load />
